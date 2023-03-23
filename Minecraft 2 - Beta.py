@@ -190,7 +190,7 @@ for y in range(-3, -5, -1):
 		for x in range(16):
 			voxel = Voxel(stone_texture, posicao = (x,y,z))
 
-GerarEstrutura().criarEstrutura('2023.03.02-01/bases/tree.txt', (10, 1, 13))
+GerarEstrutura().criarEstrutura('bases/tree.txt', (10, 1, 13))
 FirstPersonController()
 slots = Slots()
 slots.atualizar_slot()
