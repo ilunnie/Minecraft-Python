@@ -1,6 +1,6 @@
 
 """
-Created on 28/02/2023
+Created on 01/03/2023
 
 @author: Luis Gustavo Caris dos Santos
 """"""
@@ -91,8 +91,9 @@ class Slots(Entity):
 			else:
 				self.circulos[i].scale = self.tamanho_circulo/2
 
-# Classe para criar os blocos
+# Classe para criar/destruir os blocos
 class Voxel(Button):
+	# Gera um bloco
 	def __init__(self, textura, posicao = (0,0,0)):
 		super().__init__(
 			parent = scene,
@@ -149,7 +150,7 @@ class mao(Entity):
 		self.position = Vec2(0.4,-0.6)
 
 # Classe capaz de gerar estruturas a travez de arquivo txt
-class gerarEstrutura():
+class GerarEstrutura():
 	# Separa as informações do txt
 	def lerArquivo(self, arquivo):
 		with open(arquivo, 'r') as arquivo:
@@ -189,7 +190,7 @@ for y in range(-3, -5, -1):
 		for x in range(16):
 			voxel = Voxel(stone_texture, posicao = (x,y,z))
 
-gerarEstrutura().criarEstrutura('2023.03.02-01/bases/tree.txt', (10, 1, 13))
+GerarEstrutura().criarEstrutura('2023.03.02-01/bases/tree.txt', (10, 1, 13))
 FirstPersonController()
 slots = Slots()
 slots.atualizar_slot()
